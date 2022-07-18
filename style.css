@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap');
+
+body{
+    margin: 0 auto;
+    padding: 0;
+    /* background-color: #d3d7eb; */
+}
+
+.container{
+    max-width: 1600px;
+    /* display: flex; */
+}
+
+.menu{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 30px -20px #000000;
+    background-color: #040f41;
+    color: #ffffff;
+}
+
+.menu-img{
+    height: 90px;
+    margin-left: 100px;
+}
+.menu-logo{
+    width: 60%;
+}
+
+nav{
+    align-items: flex-end;
+    width: 40%;
+}
+.menu-estilos{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.produtos{
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 80px; */
+}
+
+.principal{
+    justify-content: flex-start;
+    width: 65%;
+    margin-right: 0;
+    float: left;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 100px;
+    padding-inline-start: 0;
+    justify-content: space-between;
+}
+
+.produtos-card{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    width: 250px;
+    height: 400px;
+    background-color: #c4cfe2;
+    border-radius: 8px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.produtos-img{
+    max-width: 150px;
+    height: 150px;
+    display: flex;
+    margin: 10px auto;
+    justify-items: center;
+}
+
+.produtos-info{
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.produtos-categoria{
+    height: 20px;
+    width: 70px;
+    background-color: #020720;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.produtos-nome{
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    align-items: center;
+}
+
+.produtos-descricao{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.produtos-preco{
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.produtos-carrinho{
+    width: 250px;
+    height: 10px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000000;
+}
+
+.lateral{
+    display: block;
+    width: 35%;
+    float: right;
+    margin: 0;
+    justify-content: center;
+}
+
+.pesquisa{
+    justify-content: center;
+    align-items: center;
+}
+
+.pesquisa-digitar{
+    font-size: 16px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    height: 37px;
+    width: 250px;
+    margin-top: 50px;
+    margin-left: 55px;
+    border-radius: 5px;
+}
+
+.pesquisa-botao{
+    color: #ffffff;
+    background-color: #040f41;
+    height: 43px;
+    width: 90px;
+    font-size: 16px;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+}
+
+.carrinho{
+    margin-left: 55px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    width: 350px;
+    height: 214px;
+    background-color: #c4cfe2;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.carrinho-titulo{
+    color: #ffffff;
+    background-color: #040f41;
+    width: 350px;
+    height: 36px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.carrinho-lista{
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    font-size: 22px;
+    font-weight: 700;
+    color: #485d74;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.subtitulo{
+    font-size: 14px;
+    font-weight: 400;
+    color: #485d74;
+}
