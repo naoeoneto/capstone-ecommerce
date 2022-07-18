@@ -43,10 +43,14 @@ nav{
     font-weight: 400;
 }
 
+li:hover, .produtos-carrinho:hover{
+    font-weight: 700;
+    transition: 0.5s;
+}
+
 .produtos{
     display: flex;
     flex-direction: column;
-    /* margin-top: 80px; */
 }
 
 .principal{
@@ -73,6 +77,11 @@ ul{
     border-radius: 8px;
     margin-top: 30px;
     justify-content: center;
+}
+
+.produtos-card:hover{
+    background-color: #e4e8f0;
+    transition: 0.5s;
 }
 
 .produtos-img{
@@ -135,6 +144,12 @@ ul{
     color: #000000;
 }
 
+.produtos-carrinho:hover{
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
 .lateral{
     display: block;
     width: 35%;
@@ -167,6 +182,12 @@ ul{
     padding: 0;
     border: 0;
     border-radius: 5px;
+}
+
+.pesquisa-botao:hover{
+    opacity: 0.5;
+    transition: 0.5s;
+    font-size: 15px;
 }
 
 .carrinho{
