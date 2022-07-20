@@ -109,45 +109,56 @@ ul{
     margin-top: 5px;
     justify-content: center;
     text-align: center;
+    margin-left: 10px;
 }
 
 .produtos-nome{
     display: flex;
-    margin-bottom: 0;
-    margin-top: 10px;
+    /* margin-bottom: 0; */
+    margin: 10px;
     font-size: 18px;
     font-weight: 700;
     height: 50px;
     align-items: center;
+    margin-left: 10px;
 }
 
 .produtos-descricao{
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 10px;
     font-size: 14px;
     font-weight: 400;
+    max-height: 50px;
 }
 
 .produtos-preco{
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
 }
 
 .produtos-carrinho{
-    width: 250px;
-    height: 10px;
-    align-items: center;
+    width: 200px;
+    height: 20px;
+    align-items: flex-start;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-    color: #000000;
+    color: #020720;
+    display: flex;
+    margin: 10px;
+    /* margin-top: 10px;
+    margin-left: 5px;
+    background-color: #c4cfe2;
+    border: none; */
 }
 
 .produtos-carrinho:hover{
     font-size: 15px;
     font-weight: 700;
     transition: 0.5s;
+    /* background-color: #e4e8f0; */
 }
 
 .lateral{
@@ -188,6 +199,7 @@ ul{
     opacity: 0.5;
     transition: 0.5s;
     font-size: 15px;
+    
 }
 
 .carrinho{
@@ -214,6 +226,8 @@ ul{
 }
 
 .carrinho-lista{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
