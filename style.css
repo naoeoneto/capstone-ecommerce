@@ -206,25 +206,36 @@ ul{
     margin-left: 55px;
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     width: 350px;
-    height: 300px;
+    height: 290px;
     background-color: #e4e8f0;
     justify-content: center;
-    margin-top: 36px;
-    box-shadow: 0 0 10px 0 #b8b3b3;
+    box-shadow: 0 0 10px 0 #b8b3b3;   
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    background-color: #c4cfe2;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #3f4144;
+    border-radius: 5px;
 }
 
 .carrinho-titulo{
     color: #ffffff;
     background-color: #040f41;
     width: 350px;
-    height: 36px;
+    height: 28px;
     font-size: 20px;
     font-weight: 700;
     padding: 0;
+    margin-left: 55px;
     margin-bottom: 0;
-    margin-top: 0;
     text-align: center;
+    box-shadow: 0 0 10px 0 #b8b3b3;   
 }
 
 .carrinho-lista{
@@ -232,6 +243,7 @@ ul{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 0;
 }
 
 .titulo{
@@ -303,4 +315,11 @@ ul{
 .remover-prod-carrinho{
     font-size: 14px;
     font-weight: 400;
+}
+
+.remover-prod-carrinho:hover{
+    /* opacity: 0.5; */
+    transition: 0.5s;
+    font-weight: 700;
+    color: #020720;
 }

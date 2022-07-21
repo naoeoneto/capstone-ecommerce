@@ -1,6 +1,5 @@
 console.log(produtos)
 
-// function renderizarNav(obj){
     let bodyLoja = document.querySelector("body");
     let header = document.createElement("header");
     let div = document.createElement("div");
@@ -27,11 +26,7 @@ console.log(produtos)
     div.appendChild(logo)
     nav.appendChild(menu)
     menu.append(menuTodos, menuPop, menuRock, menuAlternativo)
-// }
 
-// renderizarNav(produtos)
-
-    // let tagBodyProd = document.querySelector("body");
     let main = document.createElement("main");
     let article = document.createElement("article");
     let section = document.createElement("section");
@@ -77,7 +72,6 @@ function renderizarCard(arr){
 
 renderizarCard(produtos)
 
-// let tagBodyLateral = document.querySelector("body")
 let aside = document.createElement("aside");
 bodyLoja.appendChild(aside)
 
@@ -98,7 +92,6 @@ function renderizarPesquisa(obj){
 
 renderizarPesquisa(produtos)
 
-function renderizarCarrinho(obj){
     let sectionCar = document.createElement("section");
     let carTitulo = document.createElement("h5");
     let carMain = document.createElement("main");
@@ -111,45 +104,57 @@ function renderizarCarrinho(obj){
     carLista.classList.add("titulo");
     tagCarAdd.classList.add("subtitulo");
     carTitulo.innerText = "Carrinho de Compras"
-    // tagCarMsg.innerText = "Carrinho Vazio"
-    // tagCarAdd.innerText = "Adicionar itens"
 
-    aside.appendChild(sectionCar)
-    sectionCar.append(carTitulo, carMain)
+    aside.append(carTitulo, sectionCar)
+    sectionCar.appendChild(carMain)
     carMain.appendChild(carLista)
-}
-
-renderizarCarrinho(produtos)
 
 let carrinhoCompras = [];
-// let secaoCarrinho = document.querySelector(".produtos-lista")
+
+function addCarrinho(prod){
+    carrinhoCompras.push(prod)
+    renderizarProdutoCarrinho(prod)
+}
 
 ul.addEventListener("click", function selecionarProduto(event){
     let prodCarrinho = event.target
     if(prodCarrinho.tagName == "A"){
-        // console.log("Clicou no botão")
-        // console.log(prodCarrinho)
         let idComprar = prodCarrinho.id
-        // console.log(idComprar)
-        let produtoLoja = produtos.find(produto => produto.id == idComprar)
-            // return produtoLoja
-            addCarrinho(produtoLoja)     
+        let produtoLoja = produtos.find(prod => prod.id == idComprar)
+        addCarrinho(produtoLoja)     
     }
-    
 });
 
 console.log(carrinhoCompras)
 
-function addCarrinho(prod){
-    // for(let i = 0; i < obj.length; i++){
-    //     let prod = obj[i]
-    //     console.log(prod)
-        carrinhoCompras.push(prod)
-        renderizarProdutoCarrinho(prod)
-        // listarProdutos(produtos, secaoCarrinho)
+carLista.addEventListener("click", function removerItem(event){
+    let prodRemover = event.target
+    if(prodRemover.tagName == "A"){
+        let encontrarItem = carrinhoCompras.find(prod => carrinhoCompras.indexOf(prod) == carrinhoCompras.indexOf(prodRemover))
+        let itemRemover = carrinhoCompras.indexOf(encontrarItem)
+        carrinhoCompras.splice(itemRemover, 1)
+    // }
     }
+});
 
-// addCarrinho(produtos)
+// carLista.addEventListener("click", function removerItem(event){
+//     let prodRemover = event.target
+//     if(prodRemover.tagName == "A"){
+//         let encontrarItem = carrinhoCompras.find(produto => produto.indexOf > 0 == encontrarItem)
+//         let itemRemover = carrinhoCompras.indexOf(prodRemover)
+//         carrinhoCompras.splice(itemRemover, 1)
+
+//     }
+// });
+
+// function removerProdutoCarrinho(){
+//     //INTERCEPTAR O CLIQUE NO CARRINHO => addEventListener
+//     //IDENTIFICAR O PRODUTO
+//     //ENCONTRAR ESSE PRODUTO DENTRO DO CARRINHO => carrinhoCompras
+//     //ENCONTRAR O INDEX => indexOf 
+//     //APLICAR O SPLICE 
+//     //LISTAR NOVAMENTE NA SEÇÃO CARRINHO => listarProdutos(carrinhoCompras,secaoCarrinho)
+// }
 
 function renderizarProdutoCarrinho(produto){
     let carLista = document.querySelector(".titulo")
@@ -170,18 +175,8 @@ function renderizarProdutoCarrinho(produto){
     nomeCarrinho.innerText = `${produto.nome}`
     precoCarrinho.innerText = `R$ ${produto.preco}`
     removerCarrinho.innerText = "Remover do carrinho"
-    // let nomeProd = 
+
     carLista.appendChild(liCarrinho)
     liCarrinho.append(imgCarrinho, divCarrinho)
     divCarrinho.append(nomeCarrinho, precoCarrinho, removerCarrinho)
 }
-
-// function listarProdutos(obj, secao){
-//     // secao.innerHTML = ""
-//     for(let i = 0; i < obj.length; i++){
-//         let item = obj[i].preco
-//         // let cardProd = renderizarCard(produtos)
-//         secao.appendChild(item)
-//     }
-// }
-// listarProdutos(produtos, secaoCarrinho)
