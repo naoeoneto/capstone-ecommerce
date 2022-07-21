@@ -1,7 +1,7 @@
 const produtos = [
 {
     id: 0,
-    categoria: "pop",
+    categoria: "Pop",
     nome: "Adrijana",
     album: "Faser",
     descricao: "Misturando pop com rap, o novo álbum da cantora sueca inclui o hit 'Amare'.",

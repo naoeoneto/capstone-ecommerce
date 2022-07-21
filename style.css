@@ -73,14 +73,15 @@ ul{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     width: 250px;
     height: 400px;
-    background-color: #c4cfe2;
+    background-color: #e4e8f0;
     border-radius: 8px;
     margin-top: 30px;
     justify-content: center;
+    box-shadow: 0 0 10px 0 #b8b3b3;
 }
 
 .produtos-card:hover{
-    background-color: #e4e8f0;
+    background-color: #c4cfe2;
     transition: 0.5s;
 }
 
@@ -199,17 +200,18 @@ ul{
     opacity: 0.5;
     transition: 0.5s;
     font-size: 15px;
-    
 }
 
 .carrinho{
     margin-left: 55px;
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     width: 350px;
-    height: 214px;
-    background-color: #c4cfe2;
+    height: 300px;
+    background-color: #e4e8f0;
     justify-content: center;
-    margin-top: 0;
+    margin-top: 36px;
+    box-shadow: 0 0 10px 0 #b8b3b3;
+    overflow-y: auto;
 }
 
 .carrinho-titulo{
@@ -221,7 +223,7 @@ ul{
     font-weight: 700;
     padding: 0;
     margin-bottom: 0;
-    margin-top: 30px;
+    margin-top: 0;
     text-align: center;
 }
 
@@ -235,13 +237,70 @@ ul{
 .titulo{
     font-size: 22px;
     font-weight: 700;
-    color: #485d74;
-    margin-top: 50px;
+    /* color: #485d74; */
+    margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 10px;
+    list-style: none;
+    /* justify-items: flex-start; */
+    align-items: center;
 }
 
 .subtitulo{
     font-size: 14px;
     font-weight: 400;
     color: #485d74;
+}
+
+.item-prod-carrinho{
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    height: 60px;
+    padding: 10px;
+    padding-inline-start: 0;
+    /* margin-left: 14px; */
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+.item-prod-carrinho:hover{
+    background-color: #c4cfe2;
+}
+
+.div-prod-carrinho{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 0 0 18px;
+    justify-content: center;
+}
+
+/* h4, strong .div-prod-carrinho{
+    flex-direction: row; */
+/* } */
+
+.img-prod-carrinho{
+    width: 60px;
+    height: 60px;
+    justify-content: flex-start;
+}
+
+.nome-prod-carrinho{
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    width: 200px;
+    margin: 0;
+    /* text-overflow: ellipsis; */
+}
+
+.preco-prod-carrinho{
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.remover-prod-carrinho{
+    font-size: 14px;
+    font-weight: 400;
 }

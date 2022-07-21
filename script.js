@@ -1,43 +1,45 @@
+console.log(produtos)
+
 // function renderizarNav(obj){
-    let tagBody = document.querySelector("body");
-    let tagHeader = document.createElement("header");
-    let tagDiv = document.createElement("div");
+    let bodyLoja = document.querySelector("body");
+    let header = document.createElement("header");
+    let div = document.createElement("div");
     let logo = document.createElement("img");
-    let tagNav = document.createElement("nav");
-    let tagMenu = document.createElement("ul");
+    let nav = document.createElement("nav");
+    let menu = document.createElement("ul");
     let menuTodos = document.createElement("li");
     let menuPop = document.createElement("li");
     let menuRock = document.createElement("li");
     let menuAlternativo = document.createElement("li");
 
-    tagHeader.classList.add("menu");
-    tagDiv.classList.add("menu-logo");
+    header.classList.add("menu");
+    div.classList.add("menu-logo");
     logo.classList.add("menu-img");
-    tagMenu.classList.add("menu-estilos");
+    menu.classList.add("menu-estilos");
     logo.src = "./img/logo-musique.png"
     menuTodos.innerText = "Todos";
     menuPop.innerText = "Pop";
     menuRock.innerText = "Rock";
     menuAlternativo.innerText = "Alternativo";
 
-    tagBody.appendChild(tagHeader)
-    tagHeader.append(tagDiv, tagNav)
-    tagDiv.appendChild(logo)
-    tagNav.appendChild(tagMenu)
-    tagMenu.append(menuTodos, menuPop, menuRock, menuAlternativo)
+    bodyLoja.appendChild(header)
+    header.append(div, nav)
+    div.appendChild(logo)
+    nav.appendChild(menu)
+    menu.append(menuTodos, menuPop, menuRock, menuAlternativo)
 // }
 
 // renderizarNav(produtos)
 
     // let tagBodyProd = document.querySelector("body");
-    let tagMain = document.createElement("main");
-    let tagArticle = document.createElement("article");
-    let tagSection = document.createElement("section");
-    let tagUl = document.createElement("ul");
+    let main = document.createElement("main");
+    let article = document.createElement("article");
+    let section = document.createElement("section");
+    let ul = document.createElement("ul");
 
-    tagMain.classList.add("principal");
-    tagSection.classList.add("produtos");
-    tagUl.classList.add("produtos-lista")
+    main.classList.add("principal");
+    section.classList.add("produtos");
+    ul.classList.add("produtos-lista")
 
 function renderizarCard(arr){
     for(let i = 0; i < arr.length; i++){
@@ -48,7 +50,7 @@ function renderizarCard(arr){
         let prodNome = document.createElement("h1");
         let prodDesc = document.createElement("h5");
         let prodPreco = document.createElement("strong");
-        let prodCarrinho= document.createElement("button");
+        let prodCarrinho= document.createElement("a");
 
         prodCard.classList.add("produtos-card");
         prodImagem.classList.add("produtos-img");
@@ -64,10 +66,11 @@ function renderizarCard(arr){
         prodDesc.innerText = arr[i].descricao;
         prodPreco.innerText = `R$ ${arr[i].preco}`;
         prodCarrinho.innerText = "Adicionar ao carrinho";
+        prodCarrinho.id = arr[i].id
 
-        tagBody.appendChild(tagMain)
-        tagMain.append(tagArticle, tagSection, tagUl)
-        tagUl.appendChild(prodCard)
+        bodyLoja.appendChild(main)
+        main.append(article, section, ul)
+        ul.appendChild(prodCard)
         prodCard.append(prodImagem, prodInfo, prodCategoria, prodNome, prodDesc, prodPreco, prodCarrinho)
     }
 }
@@ -75,45 +78,110 @@ function renderizarCard(arr){
 renderizarCard(produtos)
 
 // let tagBodyLateral = document.querySelector("body")
-let tagAside = document.createElement("aside");
-tagBody.appendChild(tagAside)
+let aside = document.createElement("aside");
+bodyLoja.appendChild(aside)
 
 function renderizarPesquisa(obj){
-    let tagSectionPesq = document.createElement("section");
-    let tagInput = document.createElement("input");
-    let tagButton = document.createElement("button");
+    let sectionPesq = document.createElement("section");
+    let input = document.createElement("input");
+    let button = document.createElement("button");
 
-    tagAside.classList.add("lateral");
-    tagSectionPesq.classList.add("pesquisa");
-    tagInput.classList.add("pesquisa-digitar");
-    tagButton.classList.add("pesquisa-botao");
-    tagButton.innerText = "Pesquisa";
+    aside.classList.add("lateral");
+    sectionPesq.classList.add("pesquisa");
+    input.classList.add("pesquisa-digitar");
+    button.classList.add("pesquisa-botao");
+    button.innerText = "Pesquisa";
 
-    tagAside.appendChild(tagSectionPesq)
-    tagSectionPesq.append(tagInput, tagButton)
+    aside.appendChild(sectionPesq)
+    sectionPesq.append(input, button)
 }
 
 renderizarPesquisa(produtos)
 
 function renderizarCarrinho(obj){
-    let tagSectionCar = document.createElement("section");
-    let tagCarTitulo = document.createElement("h5");
-    let tagCarMain = document.createElement("main");
-    let tagCarLista = document.createElement("ul");
-    // let tagCarAdd = document.createElement("p");
+    let sectionCar = document.createElement("section");
+    let carTitulo = document.createElement("h5");
+    let carMain = document.createElement("main");
+    let carLista = document.createElement("ul");
+    let tagCarAdd = document.createElement("p");
 
-    tagSectionCar.classList.add("carrinho");
-    tagCarTitulo.classList.add("carrinho-titulo");
-    tagCarMain.classList.add("carrinho-lista");
-    tagCarLista.classList.add("titulo");
-    // tagCarAdd.classList.add("subtitulo");
-    tagCarTitulo.innerText = "Carrinho de Compras"
+    sectionCar.classList.add("carrinho");
+    carTitulo.classList.add("carrinho-titulo");
+    carMain.classList.add("carrinho-lista");
+    carLista.classList.add("titulo");
+    tagCarAdd.classList.add("subtitulo");
+    carTitulo.innerText = "Carrinho de Compras"
     // tagCarMsg.innerText = "Carrinho Vazio"
     // tagCarAdd.innerText = "Adicionar itens"
 
-    tagAside.appendChild(tagSectionCar)
-    tagSectionCar.append(tagCarTitulo, tagCarMain)
-    tagCarMain.appendChild(tagCarLista)
+    aside.appendChild(sectionCar)
+    sectionCar.append(carTitulo, carMain)
+    carMain.appendChild(carLista)
 }
 
 renderizarCarrinho(produtos)
+
+let carrinhoCompras = [];
+// let secaoCarrinho = document.querySelector(".produtos-lista")
+
+ul.addEventListener("click", function selecionarProduto(event){
+    let prodCarrinho = event.target
+    if(prodCarrinho.tagName == "A"){
+        // console.log("Clicou no botão")
+        // console.log(prodCarrinho)
+        let idComprar = prodCarrinho.id
+        // console.log(idComprar)
+        let produtoLoja = produtos.find(produto => produto.id == idComprar)
+            // return produtoLoja
+            addCarrinho(produtoLoja)     
+    }
+    
+});
+
+console.log(carrinhoCompras)
+
+function addCarrinho(prod){
+    // for(let i = 0; i < obj.length; i++){
+    //     let prod = obj[i]
+    //     console.log(prod)
+        carrinhoCompras.push(prod)
+        renderizarProdutoCarrinho(prod)
+        // listarProdutos(produtos, secaoCarrinho)
+    }
+
+// addCarrinho(produtos)
+
+function renderizarProdutoCarrinho(produto){
+    let carLista = document.querySelector(".titulo")
+    let liCarrinho = document.createElement("li")
+    let divCarrinho = document.createElement("div")
+    let imgCarrinho = document.createElement("img")
+    let nomeCarrinho = document.createElement("h4")
+    let precoCarrinho = document.createElement("strong")
+    let removerCarrinho = document.createElement("a")
+
+    liCarrinho.classList.add("item-prod-carrinho")
+    divCarrinho.classList.add("div-prod-carrinho")
+    imgCarrinho.classList.add("img-prod-carrinho")
+    nomeCarrinho.classList.add("nome-prod-carrinho")
+    precoCarrinho.classList.add("preco-prod-carrinho")
+    removerCarrinho.classList.add("remover-prod-carrinho")
+    imgCarrinho.src = produto.imagemProduto
+    nomeCarrinho.innerText = `${produto.nome}`
+    precoCarrinho.innerText = `R$ ${produto.preco}`
+    removerCarrinho.innerText = "Remover do carrinho"
+    // let nomeProd = 
+    carLista.appendChild(liCarrinho)
+    liCarrinho.append(imgCarrinho, divCarrinho)
+    divCarrinho.append(nomeCarrinho, precoCarrinho, removerCarrinho)
+}
+
+// function listarProdutos(obj, secao){
+//     // secao.innerHTML = ""
+//     for(let i = 0; i < obj.length; i++){
+//         let item = obj[i].preco
+//         // let cardProd = renderizarCard(produtos)
+//         secao.appendChild(item)
+//     }
+// }
+// listarProdutos(produtos, secaoCarrinho)
